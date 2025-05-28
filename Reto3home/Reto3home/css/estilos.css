@@ -1,0 +1,255 @@
+/*
+#  ·················
+#  ··_______________
+#  ·/·___/·___/·___/
+#  /·/__(__··|__··)·
+#  \___/____/____/··
+#  ·················
+*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+/* -------------Variables */
+:root{
+--green-color:#7ACC2D;
+--white-color:white;
+--black-color:#313337;
+
+/* Tipografía */
+--normal:12px;
+--titulo:20px;
+
+/* Espaciado-padding */
+--space:10px;
+}
+
+/* ------------------------- Variables */
+html,body{
+  padding:0px;
+  margin:0px;
+  font-size: var(--normal);
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* ----------------------- navbar */
+nav{
+  display: flex; 
+  background-color: var(--green-color);
+  padding: var(--space);
+  color: var(--white-color);
+  justify-content: space-between;
+  align-items: center;
+}
+nav ul{
+  display: flex;
+}
+nav li{
+  padding-left: 20px;
+  list-style: none;
+}
+nav li a{
+  color: var(--black-color);
+  text-decoration: none;
+}
+nav li a:hover{
+  color: var(--white-color);
+}
+
+/* ------------------------------ Main */
+.main_section{
+  padding: 15%;
+  text-align: center;
+}
+
+/* --------------------- seccion productos*/
+.products{
+  background-image: url("../images/curve.png");
+  background-size: cover; 
+  background-position: center top;
+  padding: 10%;
+  padding-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.product{
+  padding: var(--space);
+  background-color: var(--white-color);
+  display: flex;
+  max-width: 400px;
+  height: auto;
+  flex: 1 1 300px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+.img_content img{
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.main_button{
+  background-color: var(--green-color);
+  width: 100%;
+  padding: var(--space);
+  font-size: var(--normal);
+  color: var(--white-color);
+  border:0;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.main_button:hover{
+  background-color: #5e9e22;
+}
+
+/* -------------------- seccion caracteristicas*/
+.seccion2{
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding:10%;
+ 
+}
+.otrosproductos{
+  padding: var(--space);
+  background-color: var(--white-color);
+  flex: 1 1 100px;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.otrosproductos p{
+  text-align: left;
+}
+.otrosproductos img{
+  width: 100px;
+  height: auto;
+}
+
+/* ------------------- seccion menciones*/
+hr{
+  border: none; /* quita el estilo por defecto */
+  height: 1px;  /* grosor de la línea */
+  background-color: rgb(236, 234, 234); /* el color que querías */
+}
+.titulomenciones{ 
+  text-align: center;
+  padding: 2%;
+  color: var(--black-color);
+  font-size: var(--titulo);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.seccion3{
+  background-color: var(--white-color);
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding:5%;
+}
+.menciones{ 
+  background-color: var(--white-color);
+  display: flex;
+  max-width: 300px;
+  flex: 1 1 200px;
+  flex-direction: column;
+  box-shadow: 0px 0px 30px -4px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 30px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 30px -4px rgba(0,0,0,0.75);
+} 
+.imagen_mencion img{
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.imagen_content{
+  background-color: var(--white-color);
+  padding: var(--space);
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+  font-size: var(--normal);
+}
+
+/* ------------------------ Footer */
+footer{
+  background-color: var(--black-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 10px;
+  font-size: var(--normal);
+  font-family: 'Open Sans', sans-serif;
+}
+footer a{
+  color: var(--white-color);
+  text-decoration: none;
+}
+footer p{
+  color: var(--white-color);
+}
+
+/* ------------------------ Media querys */
+/* ------------------ Tablets - celulares */
+@media (max-width: 768px){
+  nav{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .products,
+  .seccion2,
+  .seccion3{
+    flex-direction: column;
+    padding: 10%;
+  }
+  .product,
+  .otrosproductos,
+  .menciones{
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .img_content img,
+  .imagen_mencion img{
+    max-width: 100%;
+  }
+  .main_button{
+    font-size: 14px;
+  }
+  footer{
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+/* -------------------------- Celulares*/
+@media (max-width: 480px){
+  .main_section h1{
+    font-size: 16px;
+  }
+  .product, 
+  .otrosproductos, 
+  .menciones{
+    flex: 1 1 100%;
+    padding: 10px;
+  }
+  nav{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer{
+    font-size: 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+
+
